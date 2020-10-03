@@ -239,7 +239,7 @@
     <p> खैर यह काफी सरल है,अगर हम सीमाओ को देखे ।</p>  <!-- Well, in the extreme limits, this is straightforward.-->
 
     <p>
-      उदाहरण के लिए, यदि <b> कोई भी </ b>मास्क नहीं पहना है, तब दो लोगो मिलने पर<span class = "red"> किसी के भी मास्क न पहन्ने की सम्भावना </ span> 100% है।
+      उदाहरण के लिए, यदि <b> कोई भी </ b>मास्क नहीं पहना है, तब दो लोगो के मिलने पर<span class = "red"> किसी के भी मास्क न पहने हुए होने की सम्भावना </ span> 100% है।
     </p>
        <!--For example, if <b>nobody</b> wore a mask, then whenever two people meet, the chance that <span class="red">neither wear a mask</span> is 100%.-->
     
@@ -252,25 +252,34 @@
     
 
     <p>
-      At the other extreme, if <b>everyone</b> wore a mask, then whenever two people meet, the chance that they <span class="yellow">both wear masks</span> is 100%.
+      दूसरी तरफ, अगर <b> सभी ने मास्क पहना है</ b>, तब दो लोगो के मिलने पर  <span class = "yellow"> दोनों के मास्क पहने हुए होने कि सम्भावना </ span> 100% है।
     </p>
-
+      <!--At the other extreme, if <b>everyone</b> wore a mask, then whenever two people meet, the chance that they <span class="yellow">both wear masks</span> is 100%.-->
+    
     <network :maskusage="1"></network>
 
     <p>
-      In this case, we’d only have to consider the <span class="yellow">last route</span> of disease transmission.
-      Assuming masks are 50% effective in each direction, the population would see a <span class="yellow">75% drop</span> in disease transmission.
+      इस स्थिति में, हमें केवल रोग प्रसार के <span class = "पीले"> अंतिम मार्ग </ span> पर गौर करना होगा।
+      मान लें कि मास्क प्रत्येक दिशा में 50% प्रभावी हैं, तो जनसंख्या को रोग संचरण में <span class = "yellow"> 75% कि गिरावट </ span> दिखाई देगी।
     </p>
+       <!--In this case, we’d only have to consider the <span class="yellow">last route</span> of disease transmission.
+      Assuming masks are 50% effective in each direction, the population would see a <span class="yellow">75% drop</span> in disease transmission.-->
+    
 
     <p>
-      So when <i>everyone</i> wears a mask (or when <i>no one</i> wears one), it's straightforward to calculate the drop in disease transmission in the population, because there's only one route involved.
+      इसलिए जब <i> हर कोई </ i> एक मास्क पहनता है (या जब <i> कोई भी नहीं </ i> पहनता है), तो जनसंख्या में बीमारी के संचरण में गिरावट की गणना करना सरल है, क्योंकि इसमें केवल एक मार्ग शामिल है।
     </p>
+      <!--So when <i>everyone</i> wears a mask (or when <i>no one</i> wears one), it's straightforward to calculate the drop in disease transmission in the population, because there's only one route involved.-->
 
     <p>
-      But in reality, some people wear masks and others don’t.
+      लेकिन वास्तव में, कुछ लोग मास्क पहनते हैं और अन्य इसे नहीं पहनते हैं।
+      जिसका अर्थ है कि वायरस सभी चार मार्गों के मिश्रण से फैल सकता है।
+      प्रत्येक मार्ग की संभावना कितनी है यह इस बात पर निर्भर करेगा कि कितने लोग मास्क पहनते हैं।
+    </p>
+      <!--But in reality, some people wear masks and others don’t.
       Which means the virus can spread through a mix of all four routes.
-      How likely each route is will depend on how many people wear masks.
-    </p>
+      How likely each route is will depend on how many people wear masks.-->
+    
 
     <label class="row half bigsplash">
       <div>Mask Usage: <span class="dotted">{{convertToPercent(pnetwork)}}</span>%</div>
@@ -280,11 +289,16 @@
     <network :maskusage="pnetwork"></network>
 
     <p>
-      For example, <b>if 50% of people wear masks</b>, then whenever two people meet at random, the chance that <span class="yellow">both people wear masks</span> is 50% ⨉ 50%, i.e. 25%.
-      Similarly, you can work out the chance of the other three disease transmission routes.
+      उदाहरण के लिए, <b> अगर 50% लोग मास्क पहनते हैं </ b>, तो जब भी दो लोग यादृच्छिक रूप से मिलते हैं, तो <span class = "yellow"> दोनों लोगो के मास्क पहने हुए होने </ span> कि संभावना 50% गुणा 50%, यानी 25% होति है।
+      इसी तरह, आप अन्य तीन रोग संचरण के मार्गों की संभावना का पता लगा सकते हैं।
     </p>
+       <!--For example, <b>if 50% of people wear masks</b>, then whenever two people meet at random, the chance that <span class="yellow">both people wear masks</span> is 50% ⨉ 50%, i.e. 25%.
+      Similarly, you can work out the chance of the other three disease transmission routes.-->
+    
 
     <p>
+      जब ठीक आधी आबादी मास्क पहनती है, तो यह पता चलता है कि प्रत्येक मार्ग समान रूप से संभव है।
+      (क्या आप खुद को समझा सकते हैं कि यह सच क्यों है?)
       When exactly half the population wears masks, it turns out that each route is equally likely.
       (Can you convince yourself why this has to be true?)
     </p>
